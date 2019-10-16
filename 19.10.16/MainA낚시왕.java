@@ -34,8 +34,10 @@ public class MainA낚시왕 {
 		for(int i = 1; i <= C; i++) {
 			for(int j = 1; j <= R; j++) {
 				if(arr[j][i][0] == i - 1 && arr[j][i][1] < M) {
-					shark[arr[j][i][1]][0] = -1;
-					sum += shark[arr[j][i][1]][5];
+					if(shark[arr[j][i][1]][1] == j && shark[arr[j][i][1]][2] == i && shark[arr[j][i][1]][0] != -1) {
+						shark[arr[j][i][1]][0] = -1;
+						sum += shark[arr[j][i][1]][5];
+					}
 					break;
 				}
 			}
@@ -71,6 +73,8 @@ public class MainA낚시왕 {
 						if(shark[j][5] > shark[arr[rr][cc][1]][5]) {
 							shark[arr[rr][cc][1]][0] = -1;
 							arr[rr][cc][1] = j;
+						} else {
+							shark[j][0] = -1;
 						}
 					} else {
 						arr[rr][cc][0] = i;
