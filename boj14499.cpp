@@ -48,7 +48,7 @@ int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(0);
 
-	cin >> n >> m >> x >> y >> k;
+	cin >> n >> m >> y >> x >> k;
 
 	for (int i = 0; i < n; i++) {
 		for (int j = 0; j < m; j++) {
@@ -74,7 +74,7 @@ int main() {
 		x = nx;
 
 		if (cells[y][x] != 0) num[6] = cells[y][x], cells[y][x] = 0;
-		else cells[y][x] = num[6], num[6] = 0;
+		else cells[y][x] = num[6];
 
 		cout << num[1] << "\n";
 
